@@ -14,7 +14,6 @@ console.log('Priority Scheduling (PS)')
 console.log('------------------------------')
 
 
-
 rl.question('Please enter your desired cpu scheduling: ', (cpuScheduling) => {
   const chosenCpuScheduling = cpuScheduling === 'FCFS' ? 'First Come First Served' : 
                               cpuScheduling === 'SJF' ? 'Shortest Job First' : 
@@ -30,23 +29,3 @@ rl.question('Please enter your desired cpu scheduling: ', (cpuScheduling) => {
 
   rl.close();
 });
-
-
-function computeFCFS() {
-  rl.question('Enter the number of processes: ', (processes) => {
-    // Arrival time
-    console.log('Enter the arrival times')
-    for (let i = 0; i < processes; i++) {
-      rl.question(`P${i + 1}: `, () => {
-        
-      })
-    }
-    // Burst time
-    console.log('Enter the burst times')
-    for (let i = 0; i < processes; i++) {
-      rl.question(`P${i + 1}: `, () => {
-
-      })
-    }
-  })
-}
