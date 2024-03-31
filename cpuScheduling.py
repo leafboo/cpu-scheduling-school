@@ -19,7 +19,7 @@ cpu_scheduling_mappings = {
 chosen_cpu_scheduling = cpu_scheduling_mappings.get(user_choice)
 
 
-def computeFCFS(): 
+def getUserInput():
   try:
     processes = int(input("Enter the number of processes: "))
 
@@ -28,10 +28,29 @@ def computeFCFS():
     for i in range(1, processes + 1):
       print(f'P{i}')
 
-    # Arrival time
-    print('Enter the arrival times:')
+    arrival_times = []
+    print('\nEnter the arrival times: ')
+    for i in range(1, processes + 1):
+      arrival_time = int(input((f'P{i}: ')))
+      arrival_times.append(arrival_time)
+    
+    burst_times = []
+    print('\nEnter the burst times: ')
+    for i in range(1, processes + 1):
+      burst_time = int(input(f'P{i}: '))
+      burst_times.append(burst_time)
+
+    return processes, arrival_times, burst_times
+
   except ValueError:
     print('Input is not a number. Try again.\n')
+
+
+def computeFCFS(): 
+  processes, arrival_times, burst_times = getUserInput()
+  print(f'Processes: {processes}')
+
+
 
 
 
